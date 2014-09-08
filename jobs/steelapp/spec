@@ -1,5 +1,14 @@
 ---
 name: steelapp
 templates:
+  unattend.txt.erb: config/unattend.txt  
+
 
 packages:
+ - ZeusTM_97_Linux-x86_64.tar
+
+properties:
+  steelapp.password:
+    description: Admin password for login
+
+

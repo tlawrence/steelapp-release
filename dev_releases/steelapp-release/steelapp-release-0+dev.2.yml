@@ -1,0 +1,22 @@
+---
+packages:
+- name: ZeusTM_97_Linux-x86_64.tar
+  version: !binary |-
+    N2IwNzNlZmE1ZTcwZTUxMDEwNjdlMzFlODAxMTVlOTYzODgzZjNjYw==
+  sha1: !binary |-
+    YjdjMTI4NDM0OWVjNTUyNjE4NTVlNzI2ZmEzZWI1YzFjYmRhODllNA==
+  fingerprint: !binary |-
+    N2IwNzNlZmE1ZTcwZTUxMDEwNjdlMzFlODAxMTVlOTYzODgzZjNjYw==
+  dependencies: []
+jobs:
+- name: steelapp
+  version: !binary |-
+    MTU4ZTE3NDQ4NjM0NjgyNjUwM2Q4NDk3ZWNkODQ1MDZmMzc3MTdlZg==
+  fingerprint: !binary |-
+    MTU4ZTE3NDQ4NjM0NjgyNjUwM2Q4NDk3ZWNkODQ1MDZmMzc3MTdlZg==
+  sha1: !binary |-
+    MTZjY2Y2NDI0ZjZiZjlkMTYxMjU3NTE1NGM2N2ZiYmU3MWM4ZjJhOA==
+commit_hash: 80fb7f98
+uncommitted_changes: true
+name: steelapp-release
+version: 0+dev.2

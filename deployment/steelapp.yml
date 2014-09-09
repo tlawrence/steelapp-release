@@ -1,0 +1,43 @@
+name: steelapp
+director_uuid: 3f695519-5a17-480f-879a-582dbe31131e
+
+releases:
+- name: steelapp-release
+  version: latest
+
+compilation:
+  workers: 1
+  network: external
+  reuse_compilation_vms: true
+  cloud_properties:
+    name: random
+
+jobs:
+- name: master
+  template: steelapp-release
+  instances: 1
+  resource_pool: common
+  networks:
+  - name: external
+
+networks:
+- name: external
+  subnets:
+  - range: 10.244.1.0/24
+    reserved: 
+      - 10.244.1.0
+      - 10.244.1.255
+      - 10.244.1.1
+
+
+resource_pools:
+- name: common
+  network: external
+  size: 1
+  stemcell:
+    name: bosh-stemcell
+    version: latest
+
+properties:
+  steelapp:
+    password: password123  

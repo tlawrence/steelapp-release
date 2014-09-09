@@ -4,4 +4,13 @@ set -e -x
 tar -xvf zeus/ZeusTM_97_Linux-x86_64.tar
 
 cd ZeusTM_97_Linux-x86_64
-./zinstall --replay-from=config/unattend.txt
+
+cat > unattend.txt <<EOL
+accept-license=accept
+zeushome=${BOSH_INSTALL_TARGET}
+zxtm!perform_initial_config=n
+EOL 
+
+./zinstall --replay-from=unattend.txt
+
+

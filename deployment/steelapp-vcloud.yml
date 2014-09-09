@@ -1,0 +1,59 @@
+name: steelapp
+director_uuid: b4b1d515-b53c-438a-aa96-9386ac557817
+
+releases:
+- name: steelapp-release
+  version: latest
+
+compilation:
+  cloud_properties:
+    cpu: 2
+    disk: 6144
+    ram: 1024
+  workers: 1
+  network: external
+  reuse_compilation_vms: true
+
+jobs:
+- name: master
+  template: steelapp
+  instances: 1
+  resource_pool: common
+  networks:
+  - name: external
+
+networks:
+- name: external
+  subnets:
+  - cloud_properties:
+      name: bosh-dev
+    gateway: 10.1.7.1
+    range: 10.1.7.0/24
+    reserved: null
+    static:
+    - 10.1.7.10 - 10.1.7.20
+
+
+resource_pools:
+- name: common
+  cloud_properties:
+    cpu: 1
+    disk: 4096
+    ram: 1024
+  network: external
+  size: 1
+  stemcell:
+    name: bosh-vcloud-esxi-ubuntu-lucid
+    version: latest
+
+properties:
+  steelapp:
+    password: password123  
+
+update:
+  canaries: 1
+  canary_watch_time: 30000-600000
+  max_in_flight: 1
+  serial: true
+  update_watch_time: 5000-600000
+

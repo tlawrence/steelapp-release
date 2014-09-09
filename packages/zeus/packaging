@@ -3,4 +3,5 @@ set -e -x
 
 tar -xvf zeus/ZeusTM_97_Linux-x86_64.tar
 
+cd ZeusTM_97_Linux-x86_64
 ./zinstall --replay-from=config/unattend.txt

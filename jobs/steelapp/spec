@@ -5,7 +5,7 @@ templates:
 
 
 packages:
- - ZeusTM_97_Linux-x86_64.tar
+ - zeus
 
 properties:
   steelapp.password:

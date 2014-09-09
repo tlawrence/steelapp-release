@@ -1,0 +1,16 @@
+Zeus::ZInstall::Common::get_password:Please choose a password for the admin server=<%= p("steelapp.password") %>
+Zeus::ZInstall::Common::get_password:Re-enter=<%= p("steelapp.password") %>
+admin!password=<%= p("steelapp.password") %>
+net!warn=
+start_at_boot=n
+zxtm!bindip=<%= p("steelapp.admin_ip") %>
+zxtm!cluster=c
+zxtm!group=root
+zxtm!license_key=<%= p("steelapp.license") %>
+zxtm!name_setname=3
+zxtm!nameip=<%= p("steelapp.hostname_ip") %>
+zxtm!unique_bind=y
+zxtm!user=root
+accept-license=accept
+zeushome=${BOSH_INSTALL_TARGET}
+zxtm!perform_initial_config=y

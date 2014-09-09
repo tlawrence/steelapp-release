@@ -10,5 +10,10 @@ packages:
 properties:
   steelapp.password:
     description: Admin password for login
-
+  steelapp.admin_ip:
+    description: Admin Interface IP
+  steelapp.license:
+    description: License String. Blank for Dev license
+  steelapp.hostname_ip:
+    description: Ip to bind as hostname (not using DNS with BOSH)
 

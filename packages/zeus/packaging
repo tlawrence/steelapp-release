@@ -13,6 +13,6 @@ EOL
 
 ./zinstall --replay-from=unattend.txt
 
-wait 600
+sleep 600
 
 

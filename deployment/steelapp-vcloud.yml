@@ -21,6 +21,9 @@ jobs:
   resource_pool: common
   networks:
   - name: external
+    static_ips:
+    - 10.1.7.10
+
 
 networks:
 - name: external
@@ -49,6 +52,10 @@ resource_pools:
 properties:
   steelapp:
     password: password123  
+    admin_ip: 10.1.7.10
+    license: nil
+    hostname_ip: 10.1.7.10
+
 
 update:
   canaries: 1

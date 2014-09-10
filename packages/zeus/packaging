@@ -11,6 +11,8 @@ zeushome=${BOSH_INSTALL_TARGET}
 zxtm!perform_initial_config=n
 EOL 
 
+sleep 600
+
 ./zinstall --replay-from=unattend.txt
 
 exit -1

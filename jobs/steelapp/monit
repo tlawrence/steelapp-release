@@ -3,6 +3,7 @@ check process zeus.admin
   with pidfile /var/vcap/jobs/steelapp/packages/zeus/admin/internal/pid
   start program /var/vcap/jobs/steelapp/packages/zeus/rc.d/S10admin start
   stop program /var/vcap/jobs/steelapp/packages/zeus/rc.d/S10admin stop
+  depends on config.checker
   group vcap
 
 
@@ -10,12 +11,14 @@ check process zeus.zxtm
   with pidfile /var/vcap/jobs/steelapp/packages/zeus/zxtm/internal/pid
   start program /var/vcap/jobs/steelapp/packages/zeus/rc.d/S20zxtm start
   stop program /var/vcap/jobs/steelapp/packages/zeus/rc.d/S20zxtm stop
+  depends on zeus.admin
   group vcap
 
 check process zeus.configd
   with pidfile /var/vcap/jobs/steelapp/packages/zeus/zxtm/internal-configd/pid
   start program /var/vcap/jobs/steelapp/packages/zeus/rc.d/S30configd start
   stop program /var/vcap/jobs/steelapp/packages/zeus/rc.d/S30configd stop
+  depends on zeus.zxtm
   group vcap
 
 

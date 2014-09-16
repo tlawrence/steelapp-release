@@ -53,7 +53,7 @@ properties:
   steelapp:
     password: password123  
     admin_ip: 10.1.7.10
-    license: nil
+    license: ""
     hostname_ip: 10.1.7.10
 
 

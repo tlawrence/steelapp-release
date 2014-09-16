@@ -1,0 +1,21 @@
+LOGDIR=/var/vcap/sys/log/steelapp/
+LOGFILE=steelapp_ctl.log
+
+HOME=/var/vcap/jobs/steelapp/packages/zeus
+LOG="$LOGDIR$LOGFILE"
+mkdir -p $LOGDIR
+date >> $LOG
+case $1 in
+
+  start )
+    "$HOME/start-zeus" 2>&1 | tee -a $LOG
+  ;;
+  stop )
+    "$HOME/stop-zeus" 2>&1 | tee -a $LOG
+  ;;
+  *)
+    echo "Usage: mysql_ctl {start|stop}" ;;
+esac
+
+exit 0
+

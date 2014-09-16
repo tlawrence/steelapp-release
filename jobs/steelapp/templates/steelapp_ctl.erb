@@ -1,21 +1,37 @@
+#!/bin/bash
+
+REPLAYFILE=/var/vcap/jobs/steelapp/config/unattend.txt
 LOGDIR=/var/vcap/sys/log/steelapp/
 LOGFILE=steelapp_ctl.log
-
 HOME=/var/vcap/jobs/steelapp/packages/zeus
 LOG="$LOGDIR$LOGFILE"
+
+
 mkdir -p $LOGDIR
 date >> $LOG
-case $1 in
 
+
+function configure() {
+  if [ -x "$HOME/rc.d/S99configure" ]
+  then
+    echo "Performing Steelapp Initial Config"
+    "$HOME/zxtm/configure" --replay-from="$REPLAYFILE" --noninteractive --nostart --noloop 2>&1 | tee -a $LOG
+  fi
+}
+
+
+
+case $1 in
   start )
+    configure
     "$HOME/start-zeus" 2>&1 | tee -a $LOG
   ;;
   stop )
     "$HOME/stop-zeus" 2>&1 | tee -a $LOG
   ;;
   *)
-    echo "Usage: mysql_ctl {start|stop}" ;;
+    echo "Usage: steelapp_ctl {start|stop}"  2>&1 |tee -a $LOG ;;
 esac
 
-exit 0
 
+exit 0

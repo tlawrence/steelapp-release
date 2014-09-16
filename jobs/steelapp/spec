@@ -2,7 +2,7 @@
 name: steelapp
 templates:
   unattend.txt.erb: config/unattend.txt  
-  steealpp_ctl.erb: bin/steelapp_ctl
+  steelapp_ctl.erb: bin/steelapp_ctl
 
 
 packages:

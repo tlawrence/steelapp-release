@@ -1,4 +1,3 @@
-#!/bin/bash
 
 check process stingray
   with pidfile /var/vcap/jobs/steelapp/packages/zeus/admin/internal/pid
